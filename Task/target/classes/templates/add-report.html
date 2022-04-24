@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Add Report</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+	integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+	crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+</head>
+<body>
+	<div class="container my-5">
+	<h3> Add Report</h3>
+		<div class="card">
+			<div class="card-body">
+				<div class="col-md-10">
+					<form action="#"
+						  th:action="@{/reports/add}"
+						  th:object="${report}" method="post">
+						<div class="row">
+							<div class="form-group col-md-8">
+								<label for="documentNumber" class="col-form-label">documentNumber</label> <input
+									type="text" th:field="*{documentNumber}" class="form-control" id="documentNumber"
+									placeholder="documentNumber"> <span
+									th:if="${#fields.hasErrors('documentNumber')}" th:errors="*{documentNumber}"
+									class="text-danger"></span>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="patientName" class="col-form-label">patientName</label> <input
+									type="text" th:field="*{patientName}" class="form-control" id="patientName"
+									placeholder="patientName"> <span
+									th:if="${#fields.hasErrors('patientName')}" th:errors="*{patientName}"
+									class="text-danger"></span>
+							</div>
+
+							<div class="form-group col-md-8">
+								<label for="patientId" class="col-form-label">patientId</label> <input
+									type="text" th:field="*{patientId}" class="form-control"
+									id="patientId" placeholder="patientId"> <span
+									th:if="${#fields.hasErrors('patientId')}" th:errors="*{patientId}"
+									class="text-danger"></span>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="documentTitle" class="col-form-label">documentTitle</label> <input
+									type="text" th:field="*{documentTitle}" class="form-control" id="documentTitle"
+									placeholder="documentTitle"> <span
+									th:if="${#fields.hasErrors('documentTitle')}" th:errors="*{documentTitle}"
+									class="text-danger"></span>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="documentDetail" class="col-form-label">documentDetail</label> <input
+									type="text" th:field="*{documentDetail}" class="form-control" id="documentDetail"
+									placeholder="documentDetail"> <span
+									th:if="${#fields.hasErrors('documentDetail')}" th:errors="*{documentDetail}"
+									class="text-danger"></span>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="documentDate" class="col-form-label">documentDate</label> <input
+									type="text" th:field="*{documentDate}" class="form-control" id="documentDate"
+									placeholder="documentDate"> <span
+									th:if="${#fields.hasErrors('documentDate')}" th:errors="*{documentDate}"
+									class="text-danger"></span>
+							</div>
+							<div class="form-group col-md-8">
+								<img for="photo" class="col-form-label">photo</img> <img
+									type="text" th:field="*{photo}" class="form-control" id="photo"
+									placeholder="photo">
+								<input type="file" name="image" accept="image/png, image/jpeg" />
+								<span
+									th:if="${#fields.hasErrors('photo')}" th:errors="*{photo}"
+									class="text-danger"></span>
+							</div>
+							<div class="col-md-6">
+								<input type="submit" class="btn btn-primary" value="Add Report">
+							</div>
+							<div class="form-group col-md-8"></div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
