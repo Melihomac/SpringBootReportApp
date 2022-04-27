@@ -12,13 +12,17 @@
 
 Terminal komut satırına;
 
-> mvn run
+> mvn clean package
 
-Yazıp çalıştırın. Ardından tarayıcının adres çubuğuna;
+Yazıp çalıştırın. Ardından target klasörü içerisine SNAPSHOT.jar dosyası oluşacak terminale tekrar gelip;
+
+> java -jar target/springboot-thymeleaf-crud-tutorial-0.0.1-SNAPSHOT.jar
+
+Yazın. Ide kullanmadan uygulamayı çalıştırmış oldunuz. Ardından tarayıcınızın adres çubuğuna;
 
 > http://localhost:8080/
 
-Yazın. Ide kullanmadan uygulamayı çalıştırmış oldunuz.
+Yazıp sonucu görün.
 
 Uygulamamda controller, entity ve repository olmak üzere 3 adet klasör bulunmakta.
 
